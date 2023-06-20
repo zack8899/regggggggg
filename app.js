@@ -58,7 +58,7 @@ inserData()
 form.reset()
 // Send the JSON data to a server using fetch or XMLHttpRequest
 
-changePage('/info.html');
+
 });
 
 
